@@ -19,6 +19,10 @@ class Controls extends React.Component {
                            value={this.props.volume}/>
                     <label className="form-check-label"
                            htmlFor="volume">{Math.round(this.props.volume * 100) + '%'}</label>
+                    <div className="form-check form-switch">
+                        <input onChange={this.props.changeGroup} className="form-check-input" type="checkbox" id="group"/>
+                        <label className="form-check-label" htmlFor="group">{"Group " + (this.props.group+1)}</label>
+                    </div>
                 </div>
             </div>
 

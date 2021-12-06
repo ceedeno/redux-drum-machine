@@ -11,9 +11,15 @@ import DrumPad from "./drumpad";
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {group: 0};
         this.playAudio = this.playAudio.bind(this);
         this.handlePower = this.handlePower.bind(this);
         this.handleVolume = this.handleVolume.bind(this);
+        this.changeGroup = this.changeGroup.bind(this);
+    }
+
+    changeGroup(){
+        this.setState((state) => ({group: state.group === 0 ? 1 : 0}))
     }
 
     handleVolume(e) {
@@ -27,9 +33,9 @@ class App extends React.Component {
 
     playAudio(index) {
         if (this.props.power) {
-            audios[index].audio.volume = this.props.volume;
-            audios[index].audio.play();
-            this.props.displayNewMessage(audios[index].description);
+            audios[this.state.group][index].audio.volume = this.props.volume;
+            audios[this.state.group][index].audio.play();
+            this.props.displayNewMessage(audios[this.state.group][index].description);
         }
     }
 
@@ -39,7 +45,7 @@ class App extends React.Component {
                 <div className={"row"}>
                     <div className={"col-sm-8"}>
                         <div className={"row row-cols-3 row-cols-lg-3"}>
-                            {audios.map((audio, index) => <DrumPad
+                            {audios[this.state.group].map((audio, index) => <DrumPad
                                 key={audio.id}
                                 id={audio.id}
                                 label={audio.description}
@@ -54,6 +60,8 @@ class App extends React.Component {
                             message={this.props.message}
                             handleVolume={this.handleVolume}
                             volume={this.props.volume}
+                            changeGroup={this.changeGroup}
+                            group={this.state.group}
                         />
                     </div>
 
