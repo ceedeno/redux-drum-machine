@@ -8,7 +8,6 @@ class DrumPad extends React.Component {
     }
 
     handleClick() {
-        console.log(this.props.id);
         this.props.playAudio(this.props.index);
     }
 
@@ -21,6 +20,6 @@ class DrumPad extends React.Component {
         </div>);
     }
 
-};
+}
 
 export default DrumPad;

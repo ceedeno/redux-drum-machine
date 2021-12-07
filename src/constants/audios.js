@@ -95,3 +95,28 @@ export const audios = [
     ]
 
 ];
+
+export function indexOfAudio(id) {
+    switch(id){
+        case 'Q':
+            return 0;
+        case 'W':
+            return 1;
+        case 'E':
+            return 2;
+        case 'A':
+            return 3;
+        case 'S':
+            return 4;
+        case 'D':
+            return 5;
+        case 'Z':
+            return 6;
+        case 'X':
+            return 7;
+        case 'C':
+            return 8;
+        default:
+            return -1;
+    }
+}

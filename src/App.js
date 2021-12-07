@@ -4,7 +4,7 @@ import React from "react";
 import store from "./redux/store";
 import {displayMessage, setPower, setVolume} from "./redux/actions"
 import * as ReactRedux from "react-redux";
-import {audios} from "./constants/audios";
+import {audios, indexOfAudio} from "./constants/audios";
 import Controls from "./controls";
 import DrumPad from "./drumpad";
 
@@ -16,9 +16,10 @@ class App extends React.Component {
         this.handlePower = this.handlePower.bind(this);
         this.handleVolume = this.handleVolume.bind(this);
         this.changeGroup = this.changeGroup.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
-    changeGroup(){
+    changeGroup() {
         this.setState((state) => ({group: state.group === 0 ? 1 : 0}))
     }
 
@@ -31,12 +32,28 @@ class App extends React.Component {
         this.props.turnPower();
     }
 
+    handleKeyDown(event) {
+        const index = indexOfAudio(event.key.toUpperCase())
+        if (index !== -1) {
+            this.playAudio(index);
+        }
+    }
+
     playAudio(index) {
         if (this.props.power) {
             audios[this.state.group][index].audio.volume = this.props.volume;
+            audios[this.state.group][index].audio.currentTime = 0;
             audios[this.state.group][index].audio.play();
             this.props.displayNewMessage(audios[this.state.group][index].description);
         }
+    }
+
+    componentDidMount() {
+        document.addEventListener('keydown', this.handleKeyDown);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handleKeyDown);
     }
 
     render() {
