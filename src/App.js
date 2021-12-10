@@ -33,9 +33,11 @@ class App extends React.Component {
     }
 
     handleKeyDown(event) {
-        const index = indexOfAudio(event.key.toUpperCase())
-        if (index !== -1) {
-            this.playAudio(index);
+        const index = indexOfAudio(event.key.toUpperCase());
+        if(index !== -1) {
+            const button = document.getElementById(audios[this.state.group][index].id);
+            button.focus();
+            button.click();
         }
     }
 
@@ -58,10 +60,11 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="container col-sm-6">
+            <div className="container col-md-10">
+                <div className="card card-margin">
                 <div className={"row"}>
-                    <div className={"col-sm-8"}>
-                        <div className={"row row-cols-3 row-cols-lg-3"}>
+                    <div className={"col-md-8 d-flex justify-content-center"}>
+                        <div id="button-grid" className={"row "}>
                             {audios[this.state.group].map((audio, index) => <DrumPad
                                 key={audio.id}
                                 id={audio.id}
@@ -70,7 +73,7 @@ class App extends React.Component {
                                 playAudio={this.playAudio}/>)}
                         </div>
                     </div>
-                    <div className={"col-sm-4"}>
+                    <div className={"col-md-4"}>
                         <Controls
                             handlePower={this.handlePower}
                             power={this.props.power}
@@ -83,10 +86,12 @@ class App extends React.Component {
                     </div>
 
                 </div>
+                </div>
             </div>
         );
     }
 }
+
 
 // End of React Definition
 
@@ -116,15 +121,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const Provider = ReactRedux.Provider;
-const connect = ReactRedux.connect;
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(App);
+const Container = ReactRedux.connect(mapStateToProps, mapDispatchToProps)(App);
 
 class AppWrapper extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <Provider store={store}>
