@@ -1,0 +1,47 @@
+
+#display{
+    width: calc(100% - 15px);
+    background-color: #393f3f;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 15px auto;
+    padding: 15px;
+    box-sizing: border-box;
+    max-width: 250px;
+    min-height: 60px;
+    text-align: center
+}
+
+#volume-div{
+    margin: 20px 0px;
+}
+
+@media only screen and (max-width: 767px)  {
+    #controls-div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #volume-div{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #volume{
+        min-width: 280px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+

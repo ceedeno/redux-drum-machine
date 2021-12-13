@@ -29,17 +29,6 @@
   font-size: 1.1rem;
 }
 
-#display{
-  width: calc(100% - 15px);
-  background-color: #393f3f;
-  font-size: 20px;
-  color: #FFFFFF;
-  margin: 15px auto;
-  padding: 15px;
-  box-sizing: border-box;
-  min-height: 60px;
-}
-
 #button-grid{
   max-width: 358px;
   margin-right: 0px;
