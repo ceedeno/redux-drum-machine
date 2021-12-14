@@ -11,7 +11,7 @@ class Controls extends React.Component {
                     <label className="form-check-label" htmlFor="power">Power</label>
                 </div>
                 <p id={"display"}>{this.props.message}</p>
-                <div id="volume-div" className="mb-2 d-flex flex-column">
+                <div id="volume-div" className="d-flex flex-column">
                     <input id={"volume"} onChange={this.props.handleVolume} type={"range"} min={0} max={1} step={0.05}
                            value={this.props.volume}/>
                     <label className="form-check-label"

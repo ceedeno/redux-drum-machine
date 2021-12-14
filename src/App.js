@@ -34,7 +34,7 @@ class App extends React.Component {
 
     handleKeyDown(event) {
         const index = indexOfAudio(event.key.toUpperCase());
-        if(index !== -1) {
+        if (index !== -1) {
             const button = document.getElementById(audios[this.state.group][index].id);
             button.focus();
             button.click();
@@ -62,30 +62,30 @@ class App extends React.Component {
         return (
             <div className="container col-md-10">
                 <div className="card card-margin">
-                <div className={"row"}>
-                    <div className={"col-md-8 d-flex justify-content-center"}>
-                        <div id="button-grid" className={"row "}>
-                            {audios[this.state.group].map((audio, index) => <DrumPad
-                                key={audio.id}
-                                id={audio.id}
-                                label={audio.description}
-                                index={index}
-                                playAudio={this.playAudio}/>)}
+                    <div className={"row"}>
+                        <div className={"col-md-8 d-flex justify-content-center"}>
+                            <div id="button-grid" className={"row "}>
+                                {audios[this.state.group].map((audio, index) => <DrumPad
+                                    key={audio.id}
+                                    id={audio.id}
+                                    label={audio.description}
+                                    index={index}
+                                    playAudio={this.playAudio}/>)}
+                            </div>
                         </div>
-                    </div>
-                    <div className={"col-md-4"}>
-                        <Controls
-                            handlePower={this.handlePower}
-                            power={this.props.power}
-                            message={this.props.message}
-                            handleVolume={this.handleVolume}
-                            volume={this.props.volume}
-                            changeGroup={this.changeGroup}
-                            group={this.state.group}
-                        />
-                    </div>
+                        <div className={"col-md-4"}>
+                            <Controls
+                                handlePower={this.handlePower}
+                                power={this.props.power}
+                                message={this.props.message}
+                                handleVolume={this.handleVolume}
+                                volume={this.props.volume}
+                                changeGroup={this.changeGroup}
+                                group={this.state.group}
+                            />
+                        </div>
 
-                </div>
+                    </div>
                 </div>
             </div>
         );
