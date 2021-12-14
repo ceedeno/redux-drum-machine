@@ -24,11 +24,6 @@
   box-shadow: 0 0 10px 0 rgba(82, 63, 105, 0.1);
 }
 
-.blockquote-custom {
-  position: relative;
-  font-size: 1.1rem;
-}
-
 #button-grid{
   max-width: 358px;
   margin-right: 0;
