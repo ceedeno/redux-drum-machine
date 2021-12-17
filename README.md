@@ -8,6 +8,9 @@ Redux Drum Machine is developed on **React.js** and implemented **Redux** for st
 - Gong
 - Flute
 
+## Demo
+- -> [Online Demo](https://ceedeno.github.io/drum-machine-demo/)
+
 ## Dependencies
 
 - React Redux 7.1+
