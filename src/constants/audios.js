@@ -1,95 +1,114 @@
+import Bass from '../audios/Bass.wav'
+import Guitar from '../audios/Guitar.wav'
+import BongoDrums from '../audios/Bongo-drums.wav'
+import Maracas from '../audios/Maracas.wav'
+import Organ from '../audios/Organ.wav'
+import OrganBass from '../audios/Organ-Bass.wav'
+import GuitarFase2 from '../audios/Guitar-Fase-2.wav'
+import Xylophone from '../audios/Xylophone.wav'
+import Tablas from '../audios/Tablas.wav'
+import SnareDrum from '../audios/Snare-Drum.wav'
+import Rimshot from '../audios/Rimshot.wav'
+import Cello from '../audios/Cello.wav'
+import Cello2 from '../audios/Cello-2.wav'
+import Gong from '../audios/Gong.wav'
+import Piano from '../audios/Piano.wav'
+import Piano2 from '../audios/Piano-2.wav'
+import Flute from '../audios/Flute.wav'
+import Flute2 from '../audios/Flute-2.wav'
+
 export const audios = [
     [
         {
             id: 'Q',
-            audio: new Audio("http://www.burnkit2600.com/temp/HR-16/HR-16-WAVs/02-22deep%20kic.wav"),
+            audio: new Audio(Bass),
             description: "Bass"
         },
         {
             id: 'W',
-            audio: new Audio("http://scruss.com/wordpress/wp-content/uploads/2017/12/chord-D.wav"),
+            audio: new Audio(Guitar),
             description: "Guitar"
         },
         {
             id: 'E',
-            audio: new Audio("http://cd.textfiles.com/maxsounds/WAV/INSTRUM/BONGO3.WAV"),
+            audio: new Audio(BongoDrums),
             description: "Bongo Drums"
         },
         {
             id: 'A',
-            audio: new Audio("http://tipiwiki.free.fr/snd/Maracas.wav"),
+            audio: new Audio(Maracas),
             description: "Maracas"
         },
         {
             id: 'S',
-            audio: new Audio("http://www.fun-lover.com/music/wavs/organ2.wav"),
+            audio: new Audio(Organ),
             description: "Organ"
         },
         {
             id: 'D',
-            audio: new Audio("http://tipiwiki.free.fr/mus/Jazz.wav"),
+            audio: new Audio(OrganBass),
             description: "Organ Bass"
         },
         {
             id: 'Z',
-            audio: new Audio("http://lapoc.de/samples/telshow-tele/cleanriff-E-01-12.wav"),
+            audio: new Audio(GuitarFase2),
             description: "Guitar Fase 2"
         },
         {
             id: 'X',
-            audio: new Audio("http://4umi.com/web/sound/xylolo.wav"),
+            audio: new Audio(Xylophone),
             description: "Xylophone"
         },
         {
             id: 'C',
-            audio: new Audio("http://tipiwiki.free.fr/snd/Tablas.wav"),
-            description: "Tabla"
+            audio: new Audio(Tablas),
+            description: "Tablas"
         }
     ],
     [
         {
             id: 'Q',
-            audio: new Audio("http://www.burnkit2600.com/temp/HR-16/HR-16-WAVs/16-rimshot%20snare.wav"),
+            audio: new Audio(SnareDrum),
             description: "Snare Drum"
         },
         {
             id: 'W',
-            audio: new Audio("http://www.denhaku.com/r_box/sr16/sr16sd/lowetsid.wav"),
+            audio: new Audio(Rimshot),
             description: "Rimshot"
         },
         {
             id: 'E',
-            audio: new Audio("http://www.wonko.info/wOnKoBUZZ/samplesRus/cello/shortstrum4.wav"),
+            audio: new Audio(Cello),
             description: "Cello"
         },
         {
             id: 'A',
-            audio: new Audio("http://www.wonko.info/wOnKoBUZZ/samplesRus/cello/shortstrum5.wav"),
+            audio: new Audio(Cello2),
             description: "Cello 2"
         },
         {
             id: 'S',
-            audio: new Audio("http://david.guerrero.free.fr/Effects/SuddenDeath.wav"),
+            audio: new Audio(Gong),
             description: "Gong"
         },
         {
             id: 'D',
-            audio: new Audio("http://www.elektrorevue.cz/clanky/99011/klav.wav"),
+            audio: new Audio(Piano),
             description: "Piano"
         },
         {
             id: 'Z',
-            audio: new Audio("http://membrane.com/sound/piano.wav"),
+            audio: new Audio(Piano2),
             description: "Piano 2"
         },
         {
             id: 'X',
-            audio: new Audio("http://cd.textfiles.com/sbsw/INSTRMNT/FLUTELO.WAV"),
+            audio: new Audio(Flute),
             description: "Flute"
         },
         {
             id: 'C',
-            audio: new Audio("http://cd.textfiles.com/maxsounds/WAV/EFEITOS/EXAMPLE.WAV"),
+            audio: new Audio(Flute2),
             description: "Flute 2"
         }
     ]
